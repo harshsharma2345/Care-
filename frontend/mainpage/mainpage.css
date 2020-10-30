@@ -1,0 +1,35 @@
+.card{
+    display: inline-block;
+    height: 90vh;
+    width: 61rem;
+    margin-top: 2px;
+}
+div{
+overflow: scroll;
+}
+.card2{
+margin-top: 0px;
+}
+.dash{
+    display: flex;
+    align-items:center;
+    align-content: space-between;
+}
+.dash ul li a{
+  text-decoration: none;
+  t
+}
+.addpatientform{
+  display: block;
+  width: 70vw;
+  height: 70vh;
+  margin:10px;
+  overflow: scroll;
+}
+.search{
+  margin-top: 1vh;
+  margin-left: 8vw;
+  max-width: 60vw;
+  padding: 20px;
+  border-radius: 20px;
+}

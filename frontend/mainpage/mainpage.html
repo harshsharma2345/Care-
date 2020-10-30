@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="mainpage.css">
+    <title>Welcome</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Care+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="GET" action="/logout">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="expire()">Logout</button>
+            </form>
+        </div>
+    </nav>
+    <div class="dash">
+        <div class="card" style="width: 18rem;">
+            <img src="doc.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Hi Mr. .... Doctor</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#" class="dashbtn">Upcoming Appointments</a></li>
+                <li class="list-group-item"><a href="#" class="dashbtn">Add Patient to Database</a></li>
+                <li class="list-group-item"><a href="#" class="dashbtn">Predict Recovery</a></li>
+                <li class="list-group-item"><a href="#" class="dashbtn">Doctors' Blog</a></li>
+                 <li class="list-group-item"><a href="#" class="dashbtn">Research Papers</a></li>
+                 <li class="list-group-item"><a href="#" class="dashbtn" onclick="hide2()" >Back to Dashboard</a></li>
+
+            </ul>
+
+
+        </div>
+
+        <div class="card card2">
+            <div class="card-header">
+                Welcome to Care+ Dashboard
+            </div>
+            <div class="addpatientform" id="patientform">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">First Name</label>
+                            <input type="text" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Last Name</label>
+                            <input type="text" class="form-control" id="inputPassword4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Blood Pressure</label>
+
+
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Systolic" id="">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Diastolic" id="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Heart Rate</label>
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="Beats per Minute">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Body Temprature</label>
+                            <input type="number" class="form-control" id="inputPassword4" placeholder="&#176;F
+                                    ">
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Prescription</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Prescription Photo if any.</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="formControlRange">Health Condition</label>
+                        <input type="range" class="form-control-range" id="formControlRange">
+                        <small id="emailHelp" class="form-text text-muted">Higher the range More critical the
+                            patient is!</small>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary" onclick="display()">Submit</button>
+                </form>
+
+            </div>
+            <div id="currentpatienttable">
+                <!-- <div class="active-pink-3 active-pink-4 mb-4 " > -->
+                    <input class="form-control search" type="text" id="search" placeholder="Search Patient" aria-label="Search" onkeyup="searchTable()">
+                <!-- </div> -->
+                
+                <table class="table" id="mytable">
+                    <thead>
+                        <tr>
+                            <th scope="col">S.No.</th>
+                            <th scope="col">Patient name</th>
+                            <th scope="col">Prescription</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Appointment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                             <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                             <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>@mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="card-body" id="dashmain">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Click Add Patient to add new patient in the Log</p>
+                <div class="buttonset">
+                    <button class="btn btn-primary" onclick="hide()">Add Patient</button>
+
+                    <button class="btn btn-primary" onclick="hide1()">Current Patients</button>
+
+                    <button class="btn btn-primary">Treated Patients</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="mainpage.js"></script>
+
+</body>
+
+</html>
